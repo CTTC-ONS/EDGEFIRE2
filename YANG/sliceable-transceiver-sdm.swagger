@@ -1,0 +1,1107 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "sliceable-transceiver-sdm API generated from sliceable-transceiver-sdm.yang",
+        "title": "sliceable-transceiver-sdm API"
+    },
+    "host": "localhost:8080",
+    "basePath": "/restconf",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/config/transceiver/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: transceiver",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "transceiverbody object",
+                        "schema": {
+                            "$ref": "#/definitions/transceiver"
+                        },
+                        "name": "transceiver",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update transceiver by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_transceiver_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: transceiver",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "transceiverbody object",
+                        "schema": {
+                            "$ref": "#/definitions/transceiver"
+                        },
+                        "name": "transceiver",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create transceiver by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_transceiver_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Delete operation of resource: transceiver",
+                "summary": "Delete transceiver by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_transceiver_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/transceiver"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: transceiver",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve transceiver",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver"
+            }
+        },
+        "/config/transceiver/slice/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/transceiver/slice/{sliceid}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: slice",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve slice",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver_slice_slice"
+            }
+        },
+        "/config/transceiver/slice/{sliceid}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: slice",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "slicebody object",
+                        "schema": {
+                            "$ref": "#/definitions/slice"
+                        },
+                        "name": "slice",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update slice by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_transceiver_slice_slice_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: slice",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "slicebody object",
+                        "schema": {
+                            "$ref": "#/definitions/slice"
+                        },
+                        "name": "slice",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create slice by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_transceiver_slice_slice_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: slice",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete slice by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_transceiver_slice_slice_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/slice"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: slice",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve slice by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver_slice_slice_by_id"
+            }
+        },
+        "/config/transceiver/slice/{sliceid}/optical-channel/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/transceiver/slice/{sliceid}/optical-channel/{opticalchannelid}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: optical-channel",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve optical-channel",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver_slice_optical-channel_optical-channel"
+            }
+        },
+        "/config/transceiver/slice/{sliceid}/optical-channel/{opticalchannelid}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: optical-channel",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "optical-channelbody object",
+                        "schema": {
+                            "$ref": "#/definitions/optical-channel"
+                        },
+                        "name": "optical-channel",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update optical-channel by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_transceiver_slice_optical-channel_optical-channel_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: optical-channel",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "optical-channelbody object",
+                        "schema": {
+                            "$ref": "#/definitions/optical-channel"
+                        },
+                        "name": "optical-channel",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create optical-channel by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_transceiver_slice_optical-channel_optical-channel_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: optical-channel",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete optical-channel by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_transceiver_slice_optical-channel_optical-channel_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/optical-channel"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: optical-channel",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve optical-channel by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver_slice_optical-channel_optical-channel_by_id"
+            }
+        },
+        "/config/transceiver/slice/{sliceid}/optical-channel/{opticalchannelid}/frequency-slot/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: frequency-slot",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "frequency-slotbody object",
+                        "schema": {
+                            "$ref": "#/definitions/frequency-slot"
+                        },
+                        "name": "frequency-slot",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update frequency-slot by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_transceiver_slice_optical-channel_frequency-slot_frequency-slot_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: frequency-slot",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "frequency-slotbody object",
+                        "schema": {
+                            "$ref": "#/definitions/frequency-slot"
+                        },
+                        "name": "frequency-slot",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create frequency-slot by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_transceiver_slice_optical-channel_frequency-slot_frequency-slot_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: frequency-slot",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete frequency-slot by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_transceiver_slice_optical-channel_frequency-slot_frequency-slot_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/frequency-slot"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: frequency-slot",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve frequency-slot",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver_slice_optical-channel_frequency-slot_frequency-slot"
+            }
+        },
+        "/config/transceiver/slice/{sliceid}/optical-signal/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "items": {
+                                "type": "string",
+                                "x-path": "/transceiver/slice/{sliceid}/optical-signal/{opticalchannelid}/"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: optical-signal",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve optical-signal",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver_slice_optical-signal_optical-signal"
+            }
+        },
+        "/config/transceiver/slice/{sliceid}/optical-signal/{opticalchannelid}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: optical-signal",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "optical-signalbody object",
+                        "schema": {
+                            "$ref": "#/definitions/optical-signal"
+                        },
+                        "name": "optical-signal",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update optical-signal by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_transceiver_slice_optical-signal_optical-signal_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: optical-signal",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "optical-signalbody object",
+                        "schema": {
+                            "$ref": "#/definitions/optical-signal"
+                        },
+                        "name": "optical-signal",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create optical-signal by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_transceiver_slice_optical-signal_optical-signal_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: optical-signal",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete optical-signal by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_transceiver_slice_optical-signal_optical-signal_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/optical-signal"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: optical-signal",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve optical-signal by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver_slice_optical-signal_optical-signal_by_id"
+            }
+        },
+        "/config/transceiver/slice/{sliceid}/optical-signal/{opticalchannelid}/equalization/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: equalization",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "equalizationbody object",
+                        "schema": {
+                            "$ref": "#/definitions/equalization"
+                        },
+                        "name": "equalization",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update equalization by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_transceiver_slice_optical-signal_equalization_equalization_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: equalization",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "equalizationbody object",
+                        "schema": {
+                            "$ref": "#/definitions/equalization"
+                        },
+                        "name": "equalization",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create equalization by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_transceiver_slice_optical-signal_equalization_equalization_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: equalization",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete equalization by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_transceiver_slice_optical-signal_equalization_equalization_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/equalization"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: equalization",
+                "parameters": [
+                    {
+                        "description": "ID of sliceid",
+                        "required": true,
+                        "type": "string",
+                        "name": "sliceid",
+                        "in": "path"
+                    },
+                    {
+                        "description": "ID of opticalchannelid",
+                        "required": true,
+                        "type": "string",
+                        "name": "opticalchannelid",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve equalization",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_transceiver_slice_optical-signal_equalization_equalization"
+            }
+        }
+    },
+    "definitions": {
+        "frequency-slot": {
+            "properties": {
+                "ncm": {
+                    "type": "integer",
+                    "description": "Nominal central frequency = 193.1 THz + n x 0.00625 THz. \nwhere 193.1 THz is ITU-T anchor frequency for transmission \nover the C band, and n is a positive or negative integer including 0.",
+                    "format": "int32"
+                },
+                "slot-width": {
+                    "type": "string",
+                    "description": "Slot width = m x 12.5 GHz, where m is an integer greater than or equal to 1."
+                }
+            }
+        },
+        "slice": {
+            "properties": {
+                "optical-channel": {
+                    "items": {
+                        "$ref": "#/definitions/optical-channel"
+                    },
+                    "type": "array",
+                    "x-key": "opticalchannelid"
+                },
+                "sliceid": {
+                    "type": "string"
+                },
+                "optical-signal": {
+                    "items": {
+                        "$ref": "#/definitions/optical-signal"
+                    },
+                    "type": "array",
+                    "x-key": "opticalchannelid"
+                }
+            }
+        },
+        "optical-channel": {
+            "properties": {
+                "coreid": {
+                    "type": "string"
+                },
+                "frequency-slot": {
+                    "$ref": "#/definitions/frequency-slot"
+                },
+                "modeid": {
+                    "type": "string",
+                    "description": "e.g. lp01"
+                },
+                "opticalchannelid": {
+                    "type": "string"
+                }
+            }
+        },
+        "equalization": {
+            "properties": {
+                "equalizationid": {
+                    "type": "string"
+                },
+                "mimo": {
+                    "type": "boolean"
+                },
+                "num_taps": {
+                    "type": "string"
+                }
+            }
+        },
+        "optical-signal": {
+            "properties": {
+                "equalization": {
+                    "$ref": "#/definitions/equalization"
+                },
+                "bandwidth": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "constellation": {
+                    "type": "string"
+                },
+                "fec": {
+                    "type": "string"
+                },
+                "opticalchannelid": {
+                    "type": "string",
+                    "x-path": "/transceiver/slice/optical-channel/opticalchannelid"
+                }
+            }
+        },
+        "transceiver": {
+            "properties": {
+                "slice": {
+                    "items": {
+                        "$ref": "#/definitions/slice"
+                    },
+                    "type": "array",
+                    "x-key": "sliceid"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+module: sliceable-transceiver-sdm
+    +--rw transceiver
+       +--rw slice* [sliceid]
+          +--rw sliceid            string
+          +--rw optical-channel* [opticalchannelid]
+          |  +--rw opticalchannelid    string
+          |  +--rw coreid?             string
+          |  +--rw modeid?             string
+          |  +--rw frequency-slot
+          |     +--rw ncm?          int32
+          |     +--rw slot-width?   uint32
+          +--rw optical-signal* [opticalchannelid]
+             +--rw opticalchannelid    -> /transceiver/slice/optical-channel/opticalchannelid
+             +--rw constellation?      identityref
+             +--rw bandwidth?          decimal64
+             +--rw fec?                identityref
+             +--rw equalization
+             |  +--rw equalizationid?   string
+             |  +--rw mimo?             boolean
+             |  +--rw num_taps?         uint32
+             +--ro monitor
+                +--ro ber?    string
+                +--ro osnr?   string

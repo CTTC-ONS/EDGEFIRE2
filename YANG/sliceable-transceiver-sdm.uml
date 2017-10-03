@@ -1,0 +1,87 @@
+'Download plantuml from http://plantuml.sourceforge.net/ 
+'Generate png with java -jar plantuml.jar <file> 
+'Output in img/<module>.png 
+'If Java spits out memory error increase heap size with java -Xmx1024m  -jar plantuml.jar <file> 
+@startuml img/sliceable-transceiver-sdm.png 
+hide empty fields 
+hide empty methods 
+hide <<case>> circle
+hide <<augment>> circle
+hide <<choice>> circle
+hide <<leafref>> stereotype
+hide <<leafref>> circle
+page 1x1 
+Title sliceable-transceiver-sdm 
+note top of sliceable_transceiver_sdm_sliceable_transceiver_sdm : <b>Namespace: </b> urn:sliceable-transceiver-sdm \n<b>Prefix: </b> sliceable-transceiver-sdm \n<b>Organization : </b>\nCTTC \n<b>Contact : </b>\nricard.vilalta@cttc.es \n<b>Revision : </b> 2017-03-10 \n
+package "sliceable-transceiver-sdm:sliceable-transceiver-sdm" as sliceable_transceiver_sdm_sliceable_transceiver_sdm { 
+class "sliceable-transceiver-sdm" as sliceable_transceiver_sdm << (M, #33CCFF) module>> 
+class "frequency-slot" as sliceable_transceiver_sdm_I_frequency_slot_grouping <<(G,Lime) grouping>> 
+sliceable_transceiver_sdm_I_frequency_slot_grouping : ncm : int32  
+sliceable_transceiver_sdm_I_frequency_slot_grouping : slot-width : uint32  
+class "equalization" as sliceable_transceiver_sdm_I_equalization_grouping <<(G,Lime) grouping>> 
+sliceable_transceiver_sdm_I_equalization_grouping : equalizationid : string  
+sliceable_transceiver_sdm_I_equalization_grouping : mimo : boolean  
+sliceable_transceiver_sdm_I_equalization_grouping : num_taps : uint32  
+class "optical-signal" as sliceable_transceiver_sdm_I_optical_signal_grouping <<(G,Lime) grouping>> 
+sliceable_transceiver_sdm_I_optical_signal_grouping : opticalchannelid : leafref : /transceiver/slice/optical-channel/opticalchannelid  
+sliceable_transceiver_sdm_I_optical_signal_grouping : constellation : identityref {constellation}  
+sliceable_transceiver_sdm_I_optical_signal_grouping : bandwidth : decimal64  
+sliceable_transceiver_sdm_I_optical_signal_grouping : fec : identityref {fec}  
+class "equalization" as  sliceable_transceiver_sdm_I_optical_signal_I_equalization <<container>> 
+sliceable_transceiver_sdm_I_optical_signal_grouping *-- "1" sliceable_transceiver_sdm_I_optical_signal_I_equalization 
+sliceable_transceiver_sdm_I_optical_signal_I_equalization : equalization {uses} 
+class "monitor" as  sliceable_transceiver_sdm_I_optical_signal_I_monitor <<container>> 
+sliceable_transceiver_sdm_I_optical_signal_grouping *-- "1" sliceable_transceiver_sdm_I_optical_signal_I_monitor 
+note bottom of sliceable_transceiver_sdm_I_optical_signal_I_monitor
+<b>Config = </b>false
+end note 
+sliceable_transceiver_sdm_I_optical_signal_I_monitor : ber : string  
+sliceable_transceiver_sdm_I_optical_signal_I_monitor : osnr : string  
+class "optical-channel" as sliceable_transceiver_sdm_I_optical_channel_grouping <<(G,Lime) grouping>> 
+sliceable_transceiver_sdm_I_optical_channel_grouping : opticalchannelid : string  
+sliceable_transceiver_sdm_I_optical_channel_grouping : coreid : string  
+sliceable_transceiver_sdm_I_optical_channel_grouping : modeid : string  
+class "frequency-slot" as  sliceable_transceiver_sdm_I_optical_channel_I_frequency_slot <<container>> 
+sliceable_transceiver_sdm_I_optical_channel_grouping *-- "1" sliceable_transceiver_sdm_I_optical_channel_I_frequency_slot 
+sliceable_transceiver_sdm_I_optical_channel_I_frequency_slot : frequency-slot {uses} 
+class "slice" as sliceable_transceiver_sdm_I_slice_grouping <<(G,Lime) grouping>> 
+sliceable_transceiver_sdm_I_slice_grouping : sliceid : string  
+class "optical-channel" as sliceable_transceiver_sdm_I_slice_I_optical_channel << (L, #FF7700) list>> 
+sliceable_transceiver_sdm_I_slice_grouping *-- "0..N" sliceable_transceiver_sdm_I_slice_I_optical_channel 
+sliceable_transceiver_sdm_I_slice_I_optical_channel : optical-channel {uses} 
+class "optical-signal" as sliceable_transceiver_sdm_I_slice_I_optical_signal << (L, #FF7700) list>> 
+sliceable_transceiver_sdm_I_slice_grouping *-- "0..N" sliceable_transceiver_sdm_I_slice_I_optical_signal 
+sliceable_transceiver_sdm_I_slice_I_optical_signal : optical-signal {uses} 
+class "transceiver" as sliceable_transceiver_sdm_I_transceiver_grouping <<(G,Lime) grouping>> 
+class "slice" as sliceable_transceiver_sdm_I_transceiver_I_slice << (L, #FF7700) list>> 
+sliceable_transceiver_sdm_I_transceiver_grouping *-- "0..N" sliceable_transceiver_sdm_I_transceiver_I_slice 
+sliceable_transceiver_sdm_I_transceiver_I_slice : slice {uses} 
+class "transceiver" as  sliceable_transceiver_sdm_I_transceiver <<container>> 
+sliceable_transceiver_sdm *-- "1" sliceable_transceiver_sdm_I_transceiver 
+sliceable_transceiver_sdm_I_transceiver : transceiver {uses} 
+class "constellation" as constellation << (I,Silver) identity>> 
+class "qam64" as qam64 << (I,Silver) identity>> 
+constellation <|-- qam64 
+class "qam16" as qam16 << (I,Silver) identity>> 
+constellation <|-- qam16 
+class "qam4" as qam4 << (I,Silver) identity>> 
+constellation <|-- qam4 
+class "fec" as fec << (I,Silver) identity>> 
+class "hd-fec" as hd_fec << (I,Silver) identity>> 
+fec <|-- hd_fec 
+class "sd-fec" as sd_fec << (I,Silver) identity>> 
+fec <|-- sd_fec 
+sliceable_transceiver_sdm_I_optical_signal_grouping-->constellation: constellation
+sliceable_transceiver_sdm_I_optical_signal_grouping-->fec: fec
+} 
+
+sliceable_transceiver_sdm_I_optical_signal_I_equalization --> sliceable_transceiver_sdm_I_equalization_grouping : uses 
+sliceable_transceiver_sdm_I_optical_channel_I_frequency_slot --> sliceable_transceiver_sdm_I_frequency_slot_grouping : uses 
+sliceable_transceiver_sdm_I_slice_I_optical_channel --> sliceable_transceiver_sdm_I_optical_channel_grouping : uses 
+sliceable_transceiver_sdm_I_slice_I_optical_signal --> sliceable_transceiver_sdm_I_optical_signal_grouping : uses 
+sliceable_transceiver_sdm_I_transceiver_I_slice --> sliceable_transceiver_sdm_I_slice_grouping : uses 
+sliceable_transceiver_sdm_I_transceiver --> sliceable_transceiver_sdm_I_transceiver_grouping : uses 
+center footer
+ <size:20> UML Generated : 2017-09-15 13:32 </size>
+ endfooter 
+@enduml 
