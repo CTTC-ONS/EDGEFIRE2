@@ -64,11 +64,6 @@ module tapi-sdm {
                 key "core-id";
                 uses core-slot;
             }
-            list occupied-core-slot {
-                config false;
-                key "core-id";
-                uses core-slot;
-            }
         }
         grouping sdm-termination-pac {
             leaf core-id {
